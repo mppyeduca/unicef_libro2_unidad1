@@ -1,0 +1,592 @@
+:root {
+    --primary: #17a2b8;
+    --primary_bg: #d0ecf0;
+    --flecha : #9999FF;
+    --flecha_bg :#D6D6FF;
+    --sonido: #FED766;
+    --sonido_bg: #FEEFC1;
+    --guarani: #99cc99;
+    --guarani_bg: #d6ead6;
+    --play: #f35652;
+    --amarillo: #F6FD5F;
+    --semanas: #e0eff3;
+    --clases: #e6e6fa;
+    --texto_clases: #7c77ae;
+    --semana1: #fbc786;
+    --semana2: #8ad4f3;
+    --semana3: #f5a191;
+    --semana4: #c6dea1;
+    --semana5: #b3afd4;
+    --semana6: #8d9f80;
+    --semana7: #fff278;
+    --semana8: #eaf6f3;
+    --semana9: #f094bb;
+    --color_libro: #f15627;
+    --color_libro_claro: #ff926d;
+}
+
+/* Estilos principales */
+
+body {
+    cursor: url("../img/config-icon/puntero_chico_1.png"), auto;
+}
+
+a, nav, [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled), cursor_grande {
+    cursor: url("../img/config-icon/mano_chico_1.png"), auto !important;
+}
+
+.nav_box {
+    padding: 0 !important;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 12vh !important;
+}
+
+.container_box {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container_body {
+    margin: 0;
+    height: 100vh;
+}
+
+
+/* Estilos de los slides */
+
+.slide_box {
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.slide_container {
+    height: calc(100vh - 14vh - 14vh);
+    align-items: center;
+    display: flex;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.slide_body {
+    height: calc(100vh - 14vh - 14vh);
+    display: grid;
+    align-content: space-evenly;
+    width: 100%;
+}
+
+/* Estilos de la configuración de la semana */
+
+.semana_box {
+    width: 100%;
+    max-width: 100vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+
+.semana_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 50vw;
+    height: 50vh;
+    justify-self: center;
+}
+
+.semanas {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    outline: transparent;
+
+}
+
+.button_libro_semana {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain !important;
+    background-position: center;
+    background: url(../img/config-icon/libro_icon_cerrado.png) no-repeat;
+    border: none !important;
+    color: white;
+    transition: background 0.1s ease-out 100ms;
+    padding-left: 12vh;
+    outline: transparent !important;
+}
+
+
+.button_semana {
+
+    border: 3px solid var(--primary);
+    border-radius: 8px;
+    height: 20vh;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    
+}
+
+.main_title {
+    text-align: center;
+}
+
+.border_border-radius {
+    border: 3px solid;
+    border-radius: 8px;
+}
+
+.font-weight_color {
+    font-weight: bold; 
+    color: var(--primary);
+}
+
+.config_box {
+    border: 2px solid var(--primary); 
+    border-radius: 8px; 
+    padding: 10px; 
+    margin: auto;
+}
+
+.image_responsive {
+    max-height: 30vh;
+    height: auto!important;
+    width: 100% !important;
+}
+
+.activity_title_margin {
+    margin: 8px;
+    margin-bottom: 10px;
+    margin-top: 95px;
+}
+
+.story_text_container {
+    padding: 20px!important;
+    border-color: var(--primary);
+}
+
+.story_text {
+    font-size: 1.2rem;
+    padding-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.poem_box {
+    width: 40vw;
+    align-items: center;
+    margin: auto;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.modal_button {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    font-weight: bold;
+}
+
+.modal_text {
+    font-weight: bold; 
+    background: transparent; 
+    border: transparent; 
+    padding: 0; 
+    color: var(--primary);
+}
+
+.main_resource_responsive {
+    margin-top: 20px!important;
+}
+
+.barco_boton {
+    border: 2px solid;
+    width: 15vw;
+    height: 12vh;
+    /* border-radius: 50%; */
+    background: var(--amarillo);
+    border-radius: 8px;
+}
+
+
+.barco_boton:focus {
+    border: 3px solid var(--primary)!important;
+    background-color: var(--primary_bg);
+    outline: none;
+}
+
+.barco_boton_text{
+    align-items: center; 
+    font-weight: bold; 
+    margin: 0;
+    font-size: 1.55rem;
+}
+
+.button_correcto {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    margin: 8px;
+    right: 40%;
+}
+
+.button_exercise {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.barco_bg {
+    background-image:  url("../img/clase-2/barco_opacity.png");
+    height: 52vh !important;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.ventana_bg {
+    width: 100px;
+    height: 100px;
+    background-image:  url("../img/clase-2/barco.PNG");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 100%;
+}
+
+.btn_seleccion_multiple {
+    padding: 10px;
+    background: white;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.img_seleccion_multiple {
+    max-height: 25vh;
+    width: auto !important;
+    max-width: 100%;
+}
+
+.img_in_correcto {
+    width: 40px; 
+    position: absolute;
+    top: 10px;
+}
+
+.col_seleccion_multiple {
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 4px;
+    padding: 0;
+    height: 40vh;
+}
+
+/*.marker_bg {
+    background-image:  url("../img/config-icon/marcador_grande.png");
+    height: 95px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}*/
+
+.marker_title {
+    /*color: white;*/
+    color: var(--primary);
+    font-size: 1.2rem;
+    /*text-align: center;*/
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.8;
+    padding: 10px 10px 10px 15px;
+}
+
+.btn_img_text {
+    border: 2px solid;
+    width: 15vw;
+    height: 25vh;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.name_seleccion_multiple {
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.btn_numeracion {
+    background: var(--flecha);
+    border-radius: 8px;
+}
+
+.numeracion {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.numeracion_clase {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--flecha);
+    display: table;
+}
+
+.btn_seleccion_multiple:focus {
+    border: 3px solid var(--primary)!important;
+    background-color: var(--primary_bg);
+    outline: none;
+}
+
+.btn_selected {
+    border: 3px solid var(--primary)!important;
+    background-color: var(--primary_bg);
+    outline: none;
+}
+
+.img_resolver_actividades {
+    width: auto; 
+}
+
+.barra_inicial {
+    background-color: var(--primary);
+    height: 10px; 
+    border-radius: 8px 0 0 8px; 
+    border: 1px solid white;
+    opacity: .2; 
+}
+
+.barra {
+    background-color: var(--primary); 
+    height: 10px; 
+    opacity: .2; 
+    border: 1px solid white;
+}
+
+.barra_final {
+    background-color: var(--primary);
+    height: 10px; 
+    border-radius: 0 8px 8px 0; 
+    opacity: .2; 
+    border: 1px solid white;
+}
+
+.barra_activa {
+    opacity: 1 !important;
+}
+
+.not_opacity {
+    opacity: 1 !important;
+}
+
+.fin_semana {
+    border: 2px solid;
+    width: 30vw;
+    height: 25vh;
+    background: var(--amarillo);
+    border-radius: 8px;
+}
+
+.w-5 {
+    width: 20%;
+}
+
+.w-9 {
+    width: 11.1%;
+}
+
+.w-8 {
+    width: 12.5%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.w-7 {
+    width: 14%;
+}
+
+.w-17 {
+    width: 5.8%;
+}
+
+
+
+.button_libro_semana:hover {
+    background: url(../img/config-icon/libro_icon.png) no-repeat;
+    color: var(--primary);
+    outline: transparent !important;
+}
+
+.button_clase {
+    border: 3px solid var(--flecha);
+    background-color: white;
+}
+
+.button_semana:focus {
+    /*border: 3px solid var(--primary)!important;*/
+    outline: none;
+}
+
+.text_semana {
+    font-weight: bold;
+    display: flex;
+}
+
+.text_clases {
+    /*color: var(--flecha);*/
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.btn_exit {
+    background-color: var(--color_libro);
+    width: auto;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid gray;
+}
+
+.btn_exit:hover {
+    color: var(--color_libro);
+    background-color: white;
+    border-color: var(--color_libro);
+}
+
+/*   botón flecha  */
+.flecha {
+    float: left;
+    position: relative;
+    height: 10vh;
+    width: 100%;
+    border: solid 1px #ccc;
+    border-right: none;
+    background: #eee linear-gradient(white, #f1f1f1 37%, #e1e1e1 57%, #f6f6f6);
+  }
+  
+  .flecha:after {
+    position: absolute;
+    top: 2vh;
+    right: -3.1vh;
+    width: 6vh;
+    height: 5.8vh;
+    border-left: solid 1px #ccc;
+    border-top: solid 1px #ccc;
+    transform: rotate(134deg) skewX(-10deg) skewY(-10deg);
+    background: #eee linear-gradient(45deg, white, #f1f1f1 37%, #e1e1e1 57%, #f6f6f6);
+    content: '';
+  }
+
+@media (max-height: 1080px) and (max-width: 2720px) {
+
+    .story_text {
+        font-size: 1.5rem;
+    }
+
+    .story_text_box {
+        padding: 0 20px 0 20px;
+    }
+
+    .main_title {
+        font-size: 2.3rem;
+    }
+
+    .config_box {
+        padding: 25px;
+    }
+
+    .text_clases {
+        font-size: 2.4rem;
+    }
+
+    .numeracion_clase {
+        width: 70px;
+        height: 70px;
+    }
+
+}
+
+@media (max-height: 700px) and (max-width: 1400px) {
+
+    .story_text {
+        font-size: 1rem;
+    }
+
+    .main_title {
+        font-size: 1.7rem;
+    }
+
+    .activity_title {
+        font-size: 1.4rem;
+    }
+
+    .main_text {
+        font-size: 1.3rem;
+    }
+
+    .config_box {
+        padding: 17px;
+    }
+
+    .text_clases {
+        font-size: 1.5rem;
+    }
+
+    .numeracion_clase {
+        width: 50px;
+        height: 50px;
+    }
+
+}
+
+
+@media (max-height: 500px) and (max-width: 1200px){
+    .main_text {
+        font-size: 1rem;
+    }
+
+    .config_box {
+        padding: 10px;
+    }
+
+    .text_clases {
+        font-size: 1.5rem;
+    }
+
+    .numeracion_clase {
+        width: 50px;
+        height: 30px;
+    }
+}

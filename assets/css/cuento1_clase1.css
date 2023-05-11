@@ -1,0 +1,828 @@
+:root {
+    --primary: #17a2b8;
+    --primary_bg: #d0ecf0;
+    --flecha : #9999FF;
+    --flecha_bg :#D6D6FF;
+    --sonido: #FED766;
+    --sonido_bg: #FEEFC1;
+    --guarani: #99cc99;
+    --guarani_bg: #d6ead6;
+    --play: #f35652;
+    --amarillo: #F6FD5F;
+    --semanas: #e0eff3;
+    --clases: #e6e6fa;
+    --texto_clases: #7c77ae;
+    --semana1: #fbc786;
+    --semana2: #8ad4f3;
+    --semana3: #f5a191;
+    --semana4: #c6dea1;
+    --semana5: #b3afd4;
+    --semana6: #8d9f80;
+    --semana7: #fff278;
+    --semana8: #eaf6f3;
+    --semana9: #f094bb;
+    --color_libro: #f15627;
+    --color_libro_claro: #ff926d;
+}
+
+body {
+    cursor: url("../img/config-icon/puntero_chico_1.png"), auto;
+}
+
+a, nav, [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled), cursor_grande {
+    cursor: url("../img/config-icon/mano_chico_1.png"), auto !important;
+}
+
+.story_title_margin {
+    margin: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.border_border-radius {
+    border: 3px solid;
+    border-radius: 8px;
+}
+
+.font-weight_color {
+    font-weight: bold; 
+    color: var(--primary);
+}
+
+.config_box {
+    border: 2px solid var(--primary); 
+    border-radius: 8px; 
+    padding: 10px; 
+    margin: auto;
+}
+
+.image_responsive {
+    max-height: 220px;
+    height: auto!important;
+    width: auto;
+}
+
+.activity_title_margin {
+    margin: 8px;
+    margin-bottom: 10px;
+    margin-top: 95px;
+}
+
+.story_text_responsive {
+    padding: 20px!important;
+    margin-top: 20px;
+    border-color: var(--primary);
+}
+
+.story_responsive {
+    font-size: 1.2rem;
+    padding-top: 5px;
+    margin-top: 10px;
+}
+
+.modal_button {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    font-weight: bold;
+}
+
+.modal_text {
+    font-weight: bold; 
+    background: transparent; 
+    border: transparent; 
+    padding: 0; 
+    color: var(--primary);
+}
+
+.main_resource_responsive {
+    margin-top: 20px!important;
+}
+
+.barco_boton {
+    border: 2px solid;
+    width: 200px;
+    height: 130px;
+    /* border-radius: 50%; */
+    background: var(--amarillo);
+    border-radius: 8px;
+}
+
+
+.barco_boton:focus {
+    border: 3px solid var(--primary)!important;
+    background-color: var(--primary_bg);
+    outline: none;
+}
+
+.barco_boton_text{
+    align-items: center; 
+    font-weight: 
+    bold; margin: 0;
+}
+
+.button_correcto {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    margin: 8px;
+    right: 40%;
+}
+
+.barco_bg {
+    background-image:  url("../img/clase-2/barco_opacity.png");
+    height: 800px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.ventana_bg {
+    width: 100px;
+    height: 100px;
+    background-image:  url("../img/clase-2/barco.PNG");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border-radius: 100%;
+}
+
+.btn_seleccion_multiple {
+    padding: 10px;
+    background: white;
+    height: 290px;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.img_seleccion_multiple {
+    /*margin-top: 20px;*/
+    max-height: 220px;
+    /*width: 100%;*/
+}
+
+.img_in_correcto {
+    width: 40px; 
+    position: absolute;
+    top: 10px;
+}
+
+.col_seleccion_multiple {
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 4px;
+    padding: 0;
+}
+
+/*.marker_bg {
+    background-image:  url("../img/config-icon/marcador_grande.png");
+    height: 95px;
+    width: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}*/
+
+.marker_title {
+    /*color: white;*/
+    color: var(--primary);
+    font-size: 1.2rem;
+    /*text-align: center;*/
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1;
+}
+
+.name_seleccion_multiple {
+    position:absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.btn_numeracion {
+    background: var(--flecha);
+    border-radius: 8px;
+}
+
+.numeracion {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.numeracion_clase {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--flecha);
+    display: table;
+}
+
+.btn_seleccion_multiple:focus {
+    border: 3px solid var(--primary)!important;
+    background-color: var(--primary_bg);
+    outline: none;
+}
+
+.btn_selected {
+    border: 3px solid var(--primary)!important;
+    background-color: var(--primary_bg);
+    outline: none;
+}
+
+.img_resolver_actividades {
+    width: auto; 
+}
+
+.barra_inicial {
+    background-color: var(--primary);
+    height: 10px; 
+    border-radius: 8px 0 0 8px; 
+    border: 1px solid white;
+    opacity: .2; 
+}
+
+.barra {
+    background-color: var(--primary); 
+    height: 10px; 
+    opacity: .2; 
+    border: 1px solid white;
+}
+
+.barra_final {
+    background-color: var(--primary);
+    height: 10px; 
+    border-radius: 0 8px 8px 0; 
+    opacity: .2; 
+    border: 1px solid white;
+}
+
+.barra_activa {
+    opacity: 1 !important;
+}
+
+.not_opacity {
+    opacity: 1 !important;
+}
+
+.button_semana {
+
+    border: 3px solid var(--primary);
+    border-radius: 8px;
+    height: 100px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+    
+}
+
+.button_libro_semana {
+    height: 150px !important;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain !important;
+    background-position: center;
+    background: url(../img/config-icon/libro_icon_cerrado.png) no-repeat;
+    padding: 20px;
+    border: none !important;
+    color: white;
+    transition: background 0.1s ease-out 100ms
+}
+
+.button_libro_semana:hover {
+    background: url(../img/config-icon/libro_icon.png) no-repeat;
+    color: var(--primary);
+}
+
+.button_clase {
+    border: 3px solid var(--flecha);
+    background-color: white;
+}
+
+.button_semana:focus {
+    /*border: 3px solid var(--primary)!important;*/
+    outline: none;
+}
+
+.text_semana {
+    font-weight: bold;
+}
+
+.text_clases {
+    /*color: var(--flecha);*/
+    color: black;
+}
+
+.btn_exit {
+    background-color: var(--color_libro);
+    width: auto;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid gray;
+}
+
+.btn_exit:hover {
+    color: var(--color_libro);
+    background-color: white;
+    border-color: var(--color_libro);
+}
+
+/* 1920 x 1080 */
+@media (min-width: 1024px) {
+    .story_responsive{
+        font-size: 1.1rem;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .story_responsive{
+        font-size: 1rem;
+    }
+
+}
+
+@media (min-width: 1280px) {
+    .story_responsive{
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (min-width: 1920px) {
+    .story_responsive{
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-height: 2040px) {
+    .marker_title {
+        font-size: 2rem;
+    }
+
+    .barco_bg {
+        height: 700px !important;
+    }
+
+    .story_title_margin {
+        margin: 20px;
+        margin-bottom: 50px;
+    }
+
+    .activity_title_margin {
+        margin: 10px;
+        margin-bottom: 20px;
+        margin-top: 100px;
+    }
+
+    .config_box {
+        border: 4px solid var(--primary); 
+        padding: 30px;
+    }
+    .button_semana {
+        border: 4px solid var(--primary); 
+        height: 200px;
+        margin: 20px 0;
+    }
+
+    .button_clase {
+        border: 4px solid var(--flecha);
+    }
+
+    .margin_responsive {
+        margin-bottom: 30px !important;
+    }
+
+    .navbar_responsive {
+        padding-top: 35px!important;
+    }
+
+    .main_resource_responsive {
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .image_responsive {
+        max-height: 300px;
+    }
+
+    .container_responsive {
+        padding: 15px!important;
+    }
+
+    .slide_responsive {
+        margin-bottom: 6rem;
+    }
+
+    .story_text_responsive {
+        padding: 35px !important;
+    }
+
+    .story_responsive {
+        padding-top: 20px;
+    }
+
+    .button_responsive {
+        margin-top: 60px;
+    }
+
+    .title_responsive {
+        margin-top: 20px;
+    }
+
+    .video_responsive {
+        margin-top: 10%;
+    }
+    
+    .img_resolver_actividades {
+        max-height: 360px;
+    }
+
+    .text_semana {
+        font-size: 3rem;
+    }
+}
+
+/* 900 */
+@media (max-height: 1080px) {
+    .marker_title {
+        font-size: 1.5rem;
+    }
+
+    .text_semana {
+        font-size: 2.5rem;
+    }
+
+    .barco_bg {
+        height: 600px !important;
+    }
+
+    .navbar_responsive {
+        padding-top: 20px!important;
+    }
+
+    .main_resource_responsive {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    .image_responsive {
+        max-height: 270px;
+    }
+
+    .container_responsive {
+        padding: 15px!important;
+    }
+
+    .slide_responsive {
+        margin-bottom: 6rem;
+    }
+
+    .story_text_responsive {
+        padding: 30px;
+    }
+
+    .story_responsive {
+        padding-top: 20px;
+    }
+
+    .button_responsive {
+        margin-top: 60px;
+    }
+
+    .title_responsive {
+        margin-top: 20px;
+    }
+
+ /*   .video_responsive {
+        margin-top: 15%;
+    }*/
+    .video_responsive {
+        margin-top: 8%;
+    }
+
+    .button_semana {
+        height: 200px;
+        margin: 20px 0;
+    }
+    
+}
+
+/* 1280 x 900 */
+@media (max-height: 900px) {
+
+    .main_resource_responsive {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .image_responsive {
+        max-height: 250px;
+    }
+
+    .container_responsive {
+        padding: 0!important;
+    }
+
+    .navbar_responsive {
+        height: 60px;
+        padding-bottom: 0!important;
+    }
+
+    .slide_responsive {
+        margin-bottom: 2rem;
+    }
+
+    .story_text_responsive {
+        padding: 10px;
+    }
+
+    .margin_top {
+        margin-top: 3rem;
+    }
+
+    .title_responsive {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .video_responsive {
+        margin-top: 8%;
+    }
+
+    .button_semana {
+        height: 180px;
+    }
+
+    .text_semana {
+        font-size: 35px;
+    }
+    .barco_bg {
+        height: 500px !important;
+    }
+}
+
+/* 1280 x 720 */
+@media (max-height: 800px) {
+    .box_container {
+        padding: 0 30px 0 30px;
+    }
+
+    .barco_bg {
+        height: 400px !important;
+    }
+
+    .main_resource_responsive {
+        margin-top: 10;
+        margin-bottom: 25px;
+    }
+
+    .image_responsive {
+        max-height: 230px;
+    }  
+
+    .video_responsive {
+        margin-top: 5%;
+    }
+
+    .img_resolver_actividades {
+        max-height: 280px;
+    }
+
+    .button_libro_semana {
+        height: 120px !important;
+        width: 85%;
+    }
+
+    .text_semana {
+        font-size: 30px !important;
+    }
+
+    .numeracion_clase {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 30px !important;
+    }
+
+    .button_semana {
+        height: 150px;
+    }
+}
+
+/* 1024 x 600 */
+@media (max-height: 720px) {
+    .barco_boton {
+        height: 126px;
+    }
+
+    .button_libro_semana {
+        height: 100px !important;
+        width: 80%;
+    }
+
+    .box_container {
+        padding: 0 20px 0 20px;
+    }
+
+    .activity_title_margin {
+        margin: 8px;
+        margin-bottom: 10px;
+        margin-top: 95px;
+    }
+
+    /*.btn_seleccion_multiple {
+        height: 250px;
+    }*/
+    .story_title_margin {
+        margin: 8px;
+        margin-bottom: 15px;
+        margin-top: 30px;
+    }
+
+    .config_box {
+        border: 2px solid var(--primary); 
+        padding: 10px;
+    }
+
+    .margin_responsive {
+        margin-bottom: 10px !important;
+    }
+
+    .main_resource_responsive {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    .image_responsive {
+        max-height: 220px;
+    }     
+
+    .story_responsive {
+        padding-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .title_responsive {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .story_text_responsive {
+        margin-top: 10px;
+    }
+
+    .barco_bg {
+        height: 300px !important;
+    }
+
+    .img_resolver_actividades {
+        max-height: 230px;
+    }
+
+    .button_semana {
+        height: 125px;
+        margin: 12px 0;
+    }
+
+    .text_semana {
+        font-size: 27px !important;
+    }
+
+    .numeracion_clase {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 30px !important;
+    }
+
+}
+
+@media (max-height: 600px) {
+    .h1, h1 {
+        font-size: 1.8rem;
+    }
+
+    .h3, h3 {
+        font-size: 1.5rem;
+    }
+    
+    .barco_boton {
+        height: 100px;
+    }
+
+    .button_libro_semana {
+        height: 80px !important;
+        width: 70%;
+    }
+
+    .box_container {
+        padding: 0 15px 0 15px;
+    }
+
+    .activity_title_margin {
+        margin: 8px;
+        margin-bottom: 10px;
+        margin-top: 85px;
+    }
+
+    .btn_seleccion_multiple {
+        height: 200px;
+    }
+
+    .story_title_margin {
+        margin: 8px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .config_box {
+        border: 2px solid var(--primary); 
+        padding: 10px;
+    }
+
+    .margin_responsive {
+        margin-bottom: 8px !important;
+        margin-top: 10px !important;
+    }
+
+    .main_resource_responsive {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+    
+    .image_responsive {
+        max-height: 150px;
+    }     
+
+    .story_responsive {
+        padding-top: 5px;
+        margin-bottom: 0;
+    }
+
+    .title_responsive {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .story_text_responsive {
+        margin-top: 10px;
+        padding: 10px !important;
+    }
+
+    .barco_bg {
+        height: 220px !important;
+    }
+
+    .img_resolver_actividades {
+        max-height: 200px;
+    }
+
+    .button_semana {
+        height: 110px;
+        margin: 10px 0;
+    }
+
+    .text_semana {
+        font-size: 1.2rem !important;
+    }
+
+    .numeracion_clase {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 20px !important;
+    }
+
+    .img_seleccion_multiple {
+        max-height: 130px;
+    }
+
+    .margin_top {
+        margin-top: 4rem;
+    }
+
+    .marker_title {
+        font-size: 1.2rem;
+    }
+}
+
