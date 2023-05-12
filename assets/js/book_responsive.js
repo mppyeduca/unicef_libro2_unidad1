@@ -55,6 +55,8 @@ var order_counter = 1;
 
 var video_size = 1;
 
+var answer_counter = 0;
+
 function playPause(){
     if(global_audo_muted && !global_senhas){
         return;
@@ -129,6 +131,7 @@ function repeatCurrentSlide(){
 
 function goToSlide(slideNo) {
     // console.log("------->gotoslide", slideNo);
+    answer_counter = 0;
     $("#prueba_contador").text(slideNo + "-" + slides_dictionary[slideNo].slide_name);
     order_counter = 1;
     if(global_audo_muted && !global_senhas){
@@ -493,6 +496,7 @@ function optionPress(value, indicator_id, order){
                 }
             }
             
+            answer_counter = answer_counter + 1;
             
             break;
         default:
@@ -516,6 +520,34 @@ function optionPress(value, indicator_id, order){
 
             break;
     }
+    video.onended = function () {
+        if (audioAnswer.paused) {
+            audioAnswer = false;
+            console.log("ended answer video");
+            let amount_needed = 1;
+            if(slides_dictionary[global_currentSlide].max_correct_answers){
+                amount_needed = slides_dictionary[global_currentSlide].max_correct_answers
+            }
+            
+            if(answer_counter >= amount_needed){
+                goToSlide(global_currentSlide + 1);
+            }
+        }
+    };
+    audioAnswer.onended = function () {
+        let video = document.getElementById("video-ls");
+        if (video.currentTime == 0 || video.paused || !global_senhas || text_slides.includes(global_currentSlide)) {
+            audioAnswer = false;
+            console.log("ended answer audio");
+            if(slides_dictionary[global_currentSlide].max_correct_answers){
+                amount_needed = slides_dictionary[global_currentSlide].max_correct_answers
+            }
+            
+            if(answer_counter >= amount_needed){
+                goToSlide(global_currentSlide + 1);
+            }
+        }
+    };
 }
 
 //interaciones de botones de ejercicios mostrar y esconder texto
@@ -533,6 +565,7 @@ function optionPressShow(value, indicator_id, order, show_option_by_id){
     switch (value) {
         case 1: // correct
         if(order == 0 || order == order_counter){
+            answer_counter = answer_counter + 1;
             order_counter = order_counter + 1;
             $(".repeat-button").fadeTo("fast", 1);
             $("#" + indicator_id).find('.multiple_answer').show();
@@ -609,6 +642,34 @@ function optionPressShow(value, indicator_id, order, show_option_by_id){
 
             break;
     }
+    video.onended = function () {
+        if (audioAnswer.paused) {
+            audioAnswer = false;
+            console.log("ended answer video");
+            let amount_needed = 1;
+            if(slides_dictionary[global_currentSlide].max_correct_answers){
+                amount_needed = slides_dictionary[global_currentSlide].max_correct_answers
+            }
+            
+            if(answer_counter >= amount_needed){
+                goToSlide(global_currentSlide + 1);
+            }
+        }
+    };
+    audioAnswer.onended = function () {
+        let video = document.getElementById("video-ls");
+        if (video.currentTime == 0 || video.paused || !global_senhas || text_slides.includes(global_currentSlide)) {
+            audioAnswer = false;
+            console.log("ended answer audio");
+            if(slides_dictionary[global_currentSlide].max_correct_answers){
+                amount_needed = slides_dictionary[global_currentSlide].max_correct_answers
+            }
+            
+            if(answer_counter >= amount_needed){
+                goToSlide(global_currentSlide + 1);
+            }
+        }
+    };
 }
 
 
@@ -653,6 +714,7 @@ function onMouseLeave(){
 
 //interacciones de botones emociones
 function onclickButtonAudio(indicator_id){
+    answer_counter = answer_counter + 1;
     clearTimeout(interval_function);
     is_enter = false;
     if (is_play) {
@@ -684,6 +746,34 @@ function onclickButtonAudio(indicator_id){
             video.play();
         }
     }
+    video.onended = function () {
+        if (audioAnswer.paused) {
+            audioAnswer = false;
+            console.log("ended answer video");
+            let amount_needed = 1;
+            if(slides_dictionary[global_currentSlide].max_correct_answers){
+                amount_needed = slides_dictionary[global_currentSlide].max_correct_answers
+            }
+            
+            if(answer_counter >= amount_needed){
+                goToSlide(global_currentSlide + 1);
+            }
+        }
+    };
+    audioAnswer.onended = function () {
+        let video = document.getElementById("video-ls");
+        if (video.currentTime == 0 || video.paused || !global_senhas || text_slides.includes(global_currentSlide)) {
+            audioAnswer = false;
+            console.log("ended answer audio");
+            if(slides_dictionary[global_currentSlide].max_correct_answers){
+                amount_needed = slides_dictionary[global_currentSlide].max_correct_answers
+            }
+            
+            if(answer_counter >= amount_needed){
+                goToSlide(global_currentSlide + 1);
+            }
+        }
+    };
 }
 
 function onEnterButtonAudio(indicator_id){
@@ -734,7 +824,12 @@ function playNextAudio() {
             if(!global_audo_muted) audio_element.play();
             video.play();
         }
-        // console.log('------>audio ended');
+        console.log('------>audio ended');
+        if(!slides_dictionary[global_currentSlide].is_multiple_select){
+            goToSlide(global_currentSlide + 1);
+        }
+        
+        
         return;
     } //end condition
 
@@ -979,7 +1074,7 @@ function movementButton(){
     if(global_currentSlide<9){
         goToSlide(last_viewed_slide);
     }else{
-        goToSlide(1);
+        goToSlide(2);
     }
     
 }
@@ -1099,6 +1194,9 @@ $(function () {
                 break;
             case 65: // a
                 toggleMute();
+                break;
+            case 81: // q
+                goToSlide(1);
                 break;
             // case 71: // g
             // console.log("global_currentSlide", global_currentSlide)
